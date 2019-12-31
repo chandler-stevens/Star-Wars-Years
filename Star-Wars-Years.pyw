@@ -5,37 +5,55 @@ master = Tk()
 master.title("Star Wars Year Converter")
 
 
-# Retrieve Conversion Formulae Map Using BBY Base
-def GetFormulae(year):
-    return {
-             "BBY": year,               # Galactic calendar Before Battle of Yavin
-             "ABY": -year - 1,          # Galactic calendar After Battle of Yavin
-             "BBE": year - 5,           # Galactic calendar Before Battle of Endor
-             "ABE": -year - 6,          # Galactic calendar After Battle of Endor
-             "BSI": year - 35,          # Galactic calendar Before Starkiller Incident
-             "ASI": -year - 36,         # Galactic calendar After Starkiller Incident
-             "BFE": 19 + year,          # Imperial calendar Before the Formation of the Galactic Empire
-             "AFE": 18 - year,          # Imperial calendar After the Formation of the Galactic Empire
-             "LY": 3277 - year,         # Lothal Calendar
-             "C.R.C.": 7977 - year,     # Hosnian Reckoning
-             "YK": 867 - year           # Naboo calendar Year of Kwilaan
-           }
+# Calculate and Return Conversion Formulae Map
+def GetFormulae(year, toBBY=True):
+    # If converting from Calendar to BBY
+    if toBBY:
+        return {
+                 "BBY": year,               # Galactic calendar Before Battle of Yavin
+                 "ABY": -year - 1,          # Galactic calendar After Battle of Yavin
+                 "BBE": year - 5,           # Galactic calendar Before Battle of Endor
+                 "ABE": -year - 6,          # Galactic calendar After Battle of Endor
+                 "BSI": year - 35,          # Galactic calendar Before Starkiller Incident
+                 "ASI": -year - 36,         # Galactic calendar After Starkiller Incident
+                 "BFE": 20 + year,          # Imperial calendar Before the Formation of the Galactic Empire
+                 "AFE": 19 - year,          # Imperial calendar After the Formation of the Galactic Empire
+                 "LY": 3277 - year,         # Lothal Calendar
+                 "C.R.C.": 7977 - year,     # Hosnian Reckoning
+                 "YK": 867 - year           # Naboo calendar Year of Kwilaan
+               }
+    # Otherwise, if converting from BBY to Calendars
+    else:
+        return {
+                 "BBY": year,               # Galactic calendar Before Battle of Yavin
+                 "ABY": -year - 1,          # Galactic calendar After Battle of Yavin
+                 "BBE": 5 + year,           # Galactic calendar Before Battle of Endor
+                 "ABE": -year - 6,          # Galactic calendar After Battle of Endor
+                 "BSI": 35 + year,          # Galactic calendar Before Starkiller Incident
+                 "ASI": -year - 36,         # Galactic calendar After Starkiller Incident
+                 "BFE": year - 20,         # Imperial calendar Before the Formation of the Galactic Empire
+                 "AFE": 19 - year,          # Imperial calendar After the Formation of the Galactic Empire
+                 "LY": 3277 - year,         # Lothal Calendar
+                 "C.R.C.": 7977 - year,     # Hosnian Reckoning
+                 "YK": 867 - year           # Naboo calendar Year of Kwilaan
+               }
 
 
-# Convert Year to BBY
+# Calculate Year in BBY
 def ConvertToBBY(year, menu):
-    # Get Conversion Formulae Map from Year to BBY and return BBY
     return GetFormulae(year)[menu.calendarValue.get()]
-    
+
 
 # Convert Calendars
 def Convert(year):
+    # Get Year in BBY
+    yearBBY = ConvertToBBY(year, ConversionCalendar)
     # Get Conversion Formulae Map from BBY to Year
-    ConvertFromBBY = GetFormulae(ConvertToBBY(year, ConversionCalendar))
+    fromBBYMap = GetFormulae(yearBBY, False)
     # Display calcluated values
     for calendar in Calendars:
         try:
-            calendar.yearLabel["text"] = str(ConvertFromBBY[calendar.calendarLabel["text"]])
+            calendar.yearLabel["text"] = str(fromBBYMap[calendar.calendarLabel["text"]])
         except KeyError:
             pass
 
