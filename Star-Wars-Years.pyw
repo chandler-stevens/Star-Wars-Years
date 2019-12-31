@@ -1,8 +1,7 @@
-from tkinter import *
-import tkinter.messagebox
+from tkinter import Tk, StringVar, Label, Entry, OptionMenu, RIDGE, mainloop
 
 master = Tk()
-master.title("Star Wars Year Converter")
+master.title("Star-Wars-Years")
 
 
 # Calculate and Return Conversion Formulae Map
