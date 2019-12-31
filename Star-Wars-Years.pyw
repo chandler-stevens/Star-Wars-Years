@@ -31,7 +31,7 @@ def GetFormulae(year, toBBY=True):
                  "ABE": -year - 6,          # Galactic calendar After Battle of Endor
                  "BSI": 35 + year,          # Galactic calendar Before Starkiller Incident
                  "ASI": -year - 36,         # Galactic calendar After Starkiller Incident
-                 "BFE": year - 20,         # Imperial calendar Before the Formation of the Galactic Empire
+                 "BFE": year - 20,          # Imperial calendar Before the Formation of the Galactic Empire
                  "AFE": 19 - year,          # Imperial calendar After the Formation of the Galactic Empire
                  "LY": 3277 - year,         # Lothal Calendar
                  "C.R.C.": 7977 - year,     # Hosnian Reckoning
