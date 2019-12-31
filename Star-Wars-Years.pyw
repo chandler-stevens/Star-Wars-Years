@@ -9,32 +9,32 @@ def GetFormulae(year, toBBY=True):
     # If converting from Calendar to BBY
     if toBBY:
         return {
-                 "BBY": year,               # Galactic calendar Before Battle of Yavin
-                 "ABY": -year - 1,          # Galactic calendar After Battle of Yavin
-                 "BBE": year - 5,           # Galactic calendar Before Battle of Endor
-                 "ABE": -year - 6,          # Galactic calendar After Battle of Endor
-                 "BSI": year - 35,          # Galactic calendar Before Starkiller Incident
-                 "ASI": -year - 36,         # Galactic calendar After Starkiller Incident
-                 "BFE": 20 + year,          # Imperial calendar Before the Formation of the Galactic Empire
-                 "AFE": 19 - year,          # Imperial calendar After the Formation of the Galactic Empire
-                 "LY": 3277 - year,         # Lothal Calendar
-                 "C.R.C.": 7977 - year,     # Hosnian Reckoning
-                 "YK": 867 - year           # Naboo calendar Year of Kwilaan
+                 "BBY": year,               # Galactic calendar Before Battle of Yavin (BBY = BBY)
+                 "ABY": -year - 1,          # Galactic calendar After Battle of Yavin (BBY = -ABY - 1)
+                 "BBE": year - 5,           # Galactic calendar Before Battle of Endor (BBY = BBE - 5)
+                 "ABE": -year - 6,          # Galactic calendar After Battle of Endor (BBY = -ABE - 6)
+                 "BSI": year - 35,          # Galactic calendar Before Starkiller Incident (BBY = BSI - 35)
+                 "ASI": -year - 36,         # Galactic calendar After Starkiller Incident (BBY = -ASI - 36)
+                 "BFE": 20 + year,          # Imperial calendar Before the Formation of the Galactic Empire (BBY = 20 + BFE)
+                 "AFE": 19 - year,          # Imperial calendar After the Formation of the Galactic Empire (BBY = 19 - AFE)
+                 "LY": 3277 - year,         # Lothal Calendar (BBY = 3277 - LY)
+                 "C.R.C.": 7977 - year,     # Hosnian Reckoning (BBY = 7977 - C.R.C.)
+                 "YK": 867 - year           # Naboo calendar Year of Kwilaan (BBY = 867 - YK)
                }
     # Otherwise, if converting from BBY to Calendars
     else:
         return {
-                 "BBY": year,               # Galactic calendar Before Battle of Yavin
-                 "ABY": -year - 1,          # Galactic calendar After Battle of Yavin
-                 "BBE": 5 + year,           # Galactic calendar Before Battle of Endor
-                 "ABE": -year - 6,          # Galactic calendar After Battle of Endor
-                 "BSI": 35 + year,          # Galactic calendar Before Starkiller Incident
-                 "ASI": -year - 36,         # Galactic calendar After Starkiller Incident
-                 "BFE": year - 20,          # Imperial calendar Before the Formation of the Galactic Empire
-                 "AFE": 19 - year,          # Imperial calendar After the Formation of the Galactic Empire
-                 "LY": 3277 - year,         # Lothal Calendar
-                 "C.R.C.": 7977 - year,     # Hosnian Reckoning
-                 "YK": 867 - year           # Naboo calendar Year of Kwilaan
+                 "BBY": year,               # Galactic calendar Before Battle of Yavin (BBY = BBY)
+                 "ABY": -year - 1,          # Galactic calendar After Battle of Yavin (ABY = -BBY - 1)
+                 "BBE": 5 + year,           # Galactic calendar Before Battle of Endor (BBE = 5 + BBY)
+                 "ABE": -year - 6,          # Galactic calendar After Battle of Endor (ABE = -BBY - 6)
+                 "BSI": 35 + year,          # Galactic calendar Before Starkiller Incident (BSI = 35 + BBY)
+                 "ASI": -year - 36,         # Galactic calendar After Starkiller Incident (ASI = -BBY - 36)
+                 "BFE": year - 20,          # Imperial calendar Before the Formation of the Galactic Empire (BFE = BBY - 20)
+                 "AFE": 19 - year,          # Imperial calendar After the Formation of the Galactic Empire (AFE = 19 - BBY)
+                 "LY": 3277 - year,         # Lothal Calendar (LY = 3277 - BBY)
+                 "C.R.C.": 7977 - year,     # Hosnian Reckoning (C.R.C. = 7977 - BBY)
+                 "YK": 867 - year           # Naboo calendar Year of Kwilaan (YK = 867 - BBY)
                }
 
 
