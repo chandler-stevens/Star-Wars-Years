@@ -159,7 +159,7 @@ def CalculateDuration():
         startBBY = ConvertToBBY(testedStartInput[0], StartCalendar)
         endBBY = ConvertToBBY(testedEndInput[0], EndCalendar)
         diffBBY = startBBY - endBBY
-        DurationResult.yearLabel["text"] = str(diffBBY - 1) + " - " + str(diffBBY)
+        DurationResult.yearLabel["text"] = str(diffBBY - 1) + " or " + str(diffBBY)
     else:
         DurationResult.yearLabel["text"] = ""
 
